@@ -11,7 +11,6 @@ using UnityEngine;
 public abstract class Command
 {
     private static Dictionary<string, Data> _commandDatabase;
-    private static MethodInfo _method;
 
     // The name of the command (what needs to be entered in the console for it to be called)
     public abstract string Name { get; }
@@ -28,9 +27,6 @@ public abstract class Command
     {
         // Create new dictionary
         _commandDatabase = new();
-
-        // Get the generic Execute method that will be called on all commands
-        _method = typeof(Command).GetMethod(nameof(Execute));
 
         // Find all commands in the assembly (type must be a class, not be abstract, and 
         // be a subclass of the Command type)
