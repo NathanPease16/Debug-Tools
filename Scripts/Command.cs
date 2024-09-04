@@ -10,7 +10,6 @@ using UnityEngine;
 /// </summary>
 public abstract class Command
 {
-    // Dictionary
     private static Dictionary<string, Data> _commandDatabase;
 
     // The name of the command (what needs to be entered in the console for it to be called)
